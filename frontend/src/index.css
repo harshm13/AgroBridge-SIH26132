@@ -1,0 +1,889 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* =========================================================
+   AGROBRIDGE DESIGN SYSTEM
+   SIH26132 — Market Linkage & Price Discovery
+   ========================================================= */
+
+:root {
+  --ab-green-950: #123524;
+  --ab-green-900: #174a2c;
+  --ab-green-800: #176b3a;
+  --ab-green-700: #198754;
+  --ab-green-600: #22a35a;
+  --ab-green-500: #34b96f;
+  --ab-green-100: #e7f6ed;
+  --ab-green-50: #f1faf5;
+
+  --ab-gold-600: #c88916;
+  --ab-gold-500: #e0a52d;
+  --ab-gold-100: #fff4d8;
+
+  --ab-blue-600: #2563eb;
+  --ab-blue-100: #eaf1ff;
+
+  --ab-red-600: #dc4c4c;
+  --ab-red-100: #fdecec;
+
+  --ab-text: #18231d;
+  --ab-text-soft: #5d6b63;
+  --ab-border: #e4ebe6;
+  --ab-surface: #ffffff;
+  --ab-background: #f6f9f7;
+
+  --ab-radius-sm: 10px;
+  --ab-radius-md: 14px;
+  --ab-radius-lg: 18px;
+
+  --ab-shadow-sm:
+    0 1px 2px rgba(16, 24, 20, 0.04),
+    0 4px 12px rgba(16, 24, 20, 0.04);
+
+  --ab-shadow-md:
+    0 8px 30px rgba(16, 24, 20, 0.07);
+
+  --ab-shadow-lg:
+    0 18px 50px rgba(16, 24, 20, 0.10);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family:
+    "DM Sans",
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--ab-text);
+  background:
+    radial-gradient(circle at 10% 0%,
+      rgba(52, 185, 111, 0.08),
+      transparent 28%),
+    radial-gradient(circle at 90% 10%,
+      rgba(224, 165, 45, 0.06),
+      transparent 24%),
+    var(--ab-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Plus Jakarta Sans",
+    "DM Sans",
+    Inter,
+    sans-serif;
+
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  line-height: 1.12;
+}
+
+h2 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  font-family: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa79f;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(34, 163, 90, 0.28);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef3ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9c8be;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ab-green-700);
+}
+
+/* =========================================================
+   AGROBRIDGE BACKGROUND
+   ========================================================= */
+
+.ab-page-background {
+  min-height: 100vh;
+
+  background-image:
+    radial-gradient(circle at 1px 1px,
+      rgba(25, 135, 84, 0.055) 1px,
+      transparent 0);
+
+  background-size: 26px 26px;
+}
+
+/* =========================================================
+   GLASS / SURFACE
+   ========================================================= */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--ab-shadow-md);
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.ab-card {
+  background: var(--ab-surface);
+  border: 1px solid var(--ab-border);
+  border-radius: var(--ab-radius-lg);
+  box-shadow: var(--ab-shadow-sm);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.ab-card:hover {
+  border-color: #d5e4da;
+  box-shadow: var(--ab-shadow-md);
+}
+
+/* =========================================================
+   HERO / WELCOME AREA
+   ========================================================= */
+
+.ab-hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(135deg,
+      rgba(231, 246, 237, 0.95),
+      rgba(255, 255, 255, 0.98));
+
+  border: 1px solid #dcece2;
+  border-radius: 22px;
+}
+
+.ab-hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+
+  right: -100px;
+  top: -120px;
+
+  border-radius: 50%;
+  background: rgba(52, 185, 111, 0.08);
+}
+
+/* =========================================================
+   MARKET PRICE HERO
+   ========================================================= */
+
+.ab-price-card {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(135deg,
+      #123524 0%,
+      #176b3a 55%,
+      #198754 100%);
+
+  color: white;
+
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(18, 53, 36, 0.18);
+}
+
+.ab-price-card::after {
+  content: "";
+
+  position: absolute;
+  right: -60px;
+  bottom: -90px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   AI FAIR PRICE
+   ========================================================= */
+
+.ab-ai-card {
+  background:
+    linear-gradient(135deg,
+      #f4fbf7,
+      #ffffff);
+
+  border: 1px solid #d6ebdd;
+  border-radius: var(--ab-radius-lg);
+  box-shadow: var(--ab-shadow-sm);
+}
+
+.ab-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: var(--ab-green-100);
+  color: var(--ab-green-800);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RECOMMENDATION
+   ========================================================= */
+
+.ab-recommendation {
+  border-radius: var(--ab-radius-lg);
+  border: 1px solid #e1e9e3;
+  background: white;
+  box-shadow: var(--ab-shadow-sm);
+}
+
+.ab-recommendation-wait {
+  border-left: 4px solid var(--ab-gold-500);
+}
+
+.ab-recommendation-sell {
+  border-left: 4px solid var(--ab-green-600);
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.ab-status-success {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: var(--ab-green-100);
+  color: var(--ab-green-800);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ab-status-warning {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: var(--ab-gold-100);
+  color: #8a610e;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ab-status-danger {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: var(--ab-red-100);
+  color: #a93636;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MARKET TREND
+   ========================================================= */
+
+.ab-trend-up {
+  color: var(--ab-green-700);
+}
+
+.ab-trend-down {
+  color: var(--ab-red-600);
+}
+
+.ab-trend-neutral {
+  color: var(--ab-text-soft);
+}
+
+/* =========================================================
+   TRUST SCORE
+   ========================================================= */
+
+.ab-trust-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  background: #f7faf8;
+  border: 1px solid var(--ab-border);
+}
+
+.ab-trust-score strong {
+  color: var(--ab-green-800);
+}
+
+/* =========================================================
+   BUYER OFFER
+   ========================================================= */
+
+.ab-offer-card {
+  background: white;
+  border: 1px solid var(--ab-border);
+  border-radius: 16px;
+  padding: 18px;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.ab-offer-card:hover {
+  transform: translateY(-2px);
+  border-color: #bcd9c7;
+  box-shadow: var(--ab-shadow-md);
+}
+
+/* =========================================================
+   NET REALIZATION
+   ========================================================= */
+
+.ab-realization {
+  background:
+    linear-gradient(135deg,
+      #f4faf6,
+      #ffffff);
+
+  border: 1px solid #d8e9de;
+  border-radius: 18px;
+}
+
+.ab-realization-value {
+  font-family:
+    "Plus Jakarta Sans",
+    sans-serif;
+
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+
+  color: var(--ab-green-800);
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================================================
+   LOGISTICS POOL
+   ========================================================= */
+
+.ab-logistics-card {
+  position: relative;
+
+  background: white;
+
+  border: 1px solid var(--ab-border);
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+.ab-logistics-card::before {
+  content: "";
+
+  display: block;
+
+  height: 4px;
+
+  background:
+    linear-gradient(90deg,
+      var(--ab-green-700),
+      var(--ab-gold-500));
+}
+
+/* =========================================================
+   MAP CONTAINER
+   ========================================================= */
+
+.ab-map {
+  position: relative;
+  min-height: 380px;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(135deg,
+      #edf5ef,
+      #f9fbf9);
+
+  border: 1px solid var(--ab-border);
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.ab-input {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 10px 13px;
+
+  border: 1px solid #d6dfd9;
+  border-radius: 11px;
+
+  background: white;
+
+  color: var(--ab-text);
+
+  outline: none;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.ab-input:focus {
+  border-color: var(--ab-green-600);
+
+  box-shadow:
+    0 0 0 3px rgba(34, 163, 90, 0.10);
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.ab-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 10px 17px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: var(--ab-green-700);
+  color: white;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  transition:
+    background 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.ab-primary-btn:hover {
+  background: var(--ab-green-800);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(25, 135, 84, 0.20);
+}
+
+.ab-primary-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.ab-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 10px 17px;
+
+  border: 1px solid #d7e1db;
+  border-radius: 11px;
+
+  background: white;
+  color: var(--ab-green-800);
+
+  font-weight: 700;
+  font-size: 14px;
+
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.ab-secondary-btn:hover {
+  background: var(--ab-green-50);
+  border-color: #bcd9c7;
+}
+
+/* =========================================================
+   NAVIGATION HELPERS
+   ========================================================= */
+
+.ab-nav-active {
+  position: relative;
+
+  color: var(--ab-green-800);
+  font-weight: 700;
+}
+
+.ab-nav-active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 22px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: var(--ab-green-600);
+}
+
+/* =========================================================
+   CHATBOT
+   ========================================================= */
+
+.ab-chat-window {
+  background: white;
+
+  border: 1px solid var(--ab-border);
+  border-radius: 20px;
+
+  box-shadow: var(--ab-shadow-lg);
+
+  overflow: hidden;
+}
+
+.ab-chat-user {
+  margin-left: auto;
+
+  max-width: 78%;
+
+  padding: 10px 14px;
+
+  border-radius: 15px 15px 4px 15px;
+
+  background: var(--ab-green-700);
+  color: white;
+}
+
+.ab-chat-bot {
+  max-width: 78%;
+
+  padding: 10px 14px;
+
+  border-radius: 15px 15px 15px 4px;
+
+  background: #f0f5f2;
+  color: var(--ab-text);
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.ab-skeleton {
+  position: relative;
+  overflow: hidden;
+
+  background: #eaf0ec;
+  border-radius: 8px;
+}
+
+.ab-skeleton::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background:
+    linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent);
+
+  animation: ab-shimmer 1.4s infinite;
+}
+
+@keyframes ab-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.ab-container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .ab-container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .ab-map {
+    min-height: 300px;
+  }
+
+  .ab-offer-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .ab-container {
+    width: calc(100% - 20px);
+  }
+
+  .ab-price-card {
+    border-radius: 16px;
+  }
+
+  .ab-hero {
+    border-radius: 16px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   SCROLLBAR UTILITIES
+   ========================================================= */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* =========================================================
+   OFFER COMPARISON TABLE DESIGN SYSTEM
+   ========================================================= */
+
+.ab-comparison-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 24px;
+  background: white;
+}
+
+.ab-comparison-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.ab-comparison-table th {
+  padding: 20px 24px;
+  text-align: left;
+  font-weight: 800;
+  color: var(--ab-text);
+  background: #f8faf8;
+  border-bottom: 2px solid var(--ab-border);
+}
+
+.ab-comparison-table th:first-child {
+  width: 240px;
+  min-width: 200px;
+}
+
+.ab-comparison-table td {
+  padding: 18px 24px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--ab-border);
+  color: var(--ab-text);
+}
+
+.ab-comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ab-comparison-table tr:hover td {
+  background: #fcfdfe;
+}
+
+/* Highlight Best Offer Column */
+.ab-comparison-table .best-col {
+  background: rgba(231, 246, 237, 0.45) !important;
+  border-left: 2px solid #34b96f !important;
+  border-right: 2px solid #34b96f !important;
+}
+
+.ab-comparison-table th.best-col {
+  background: #e7f6ed !important;
+  border-top: 3px solid #198754 !important;
+}
+
+/* Highlight Net Realization Row */
+.ab-comparison-table tr.net-row td {
+  background: #f1faf5;
+  font-weight: 800;
+  border-top: 2px solid #bce4cd;
+  border-bottom: 2px solid #bce4cd;
+}
+
+.ab-comparison-table tr.net-row td.best-col {
+  background: #e0f4e8 !important;
+}

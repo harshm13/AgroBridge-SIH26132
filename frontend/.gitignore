@@ -1,0 +1,4 @@
+.env
+__pycache__/
+backend/agrobridge.db
+frontend/node_modules/
