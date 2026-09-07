@@ -370,7 +370,8 @@ AgroBridge/
 │   ├── api/
 │   │   ├── chatbot.py
 │   │   └── predictions.py
-│   │
+│   │   └── grading.py
+│   │   └── pooling.py
 │   ├── db/
 │   │   ├── database.py
 │   │   └── models.py
@@ -389,6 +390,7 @@ AgroBridge/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── services/
+│   │   ├── data/
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   ├── index.css
