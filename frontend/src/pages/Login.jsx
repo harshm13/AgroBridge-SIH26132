@@ -58,7 +58,7 @@ export default function Login({ onLogin }) {
                         Enter Workspace <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                 </div>
-
+              
                 {/* Buyer Login Card */}
                 <div 
                     onClick={() => onLogin('buyer')}
